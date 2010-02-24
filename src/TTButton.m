@@ -94,9 +94,11 @@ static const CGFloat kVPadding = 7;
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request {
+	NSLog(@"BUTTON got request %@", request);
   TTURLImageResponse* response = request.response;
   self.image = response.image;
   [_button setNeedsDisplay];
+  [_button setNeedsLayout];
   
   TT_RELEASE_SAFELY(_request);
 }

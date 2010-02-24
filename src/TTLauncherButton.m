@@ -55,6 +55,7 @@ static const NSInteger kMaxBadgeNumber = 99;
       _badge.text = [NSString stringWithFormat:@"%d+", kMaxBadgeNumber];
     }
   }
+  //NSLog(@"UPDATING BADGE %@", _badge.text);
   _badge.hidden = _item.badgeNumber <= 0;
   [_badge sizeToFit];
   [self setNeedsLayout];
@@ -136,6 +137,7 @@ static const NSInteger kMaxBadgeNumber = 99;
 - (void)layoutSubviews {
   if (_badge || _closeButton) {
     CGRect imageRect = [self rectForImage];
+//	  NSLog(@"iamge rect %@, badge %@", NSStringFromCGRect(imageRect), [self.badge frame]);
     if (_badge) {
       _badge.origin = CGPointMake((imageRect.origin.x + imageRect.size.width) - (floor(_badge.width*0.7)),
                                   imageRect.origin.y - (floor(_badge.height*0.25)));

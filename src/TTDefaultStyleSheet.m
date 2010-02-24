@@ -127,6 +127,14 @@
           font:nil];
 }
 
+- (TTStyle*)blueToolbarRoundButton:(UIControlState)state {
+	return
+    [self toolbarButtonForState:state
+						  shape:[TTRoundedRectangleShape shapeWithRadius:TT_ROUNDED]
+					  tintColor:RGBCOLOR(0, 0, 100)
+						   font:nil];
+}
+
 - (TTStyle*)searchTextField {
   return
     [TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:TT_ROUNDED] next:
@@ -462,8 +470,8 @@
 
 - (TTStyle*)launcherButton:(UIControlState)state {
   return
-    [TTPartStyle styleWithName:@"image" style:TTSTYLESTATE(launcherButtonImage:, state) next:
-    [TTTextStyle styleWithFont:[UIFont boldSystemFontOfSize:11] color:RGBCOLOR(180, 180, 180)
+    [TTPartStyle styleWithName:@"image" style:TTSTYLESTATE(launcherButtonImage:, state) next: /* XXXX fix this by using our own stylesheet!! */
+    [TTTextStyle styleWithFont:[UIFont boldSystemFontOfSize:11] color:[UIColor blackColor]//RGBCOLOR(180, 180, 180)
                  minimumFontSize:11 shadowColor:nil
                  shadowOffset:CGSizeZero next:nil]];
 }
@@ -728,12 +736,12 @@
   return [UIFont boldSystemFontOfSize:17];
 }
 
-- (UIFont*)tableSmallFont {
-  return [UIFont boldSystemFontOfSize:15];
+- (UIFont*)tableSmallFont { //caption rhs
+  return [UIFont boldSystemFontOfSize:12];
 }
 
-- (UIFont*)tableTitleFont {
-  return [UIFont boldSystemFontOfSize:13];
+- (UIFont*)tableTitleFont {//caption lhs
+  return [UIFont boldSystemFontOfSize:10];
 }
 
 - (UIFont*)tableTimestampFont {

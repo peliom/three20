@@ -191,11 +191,12 @@
 
 @end
 
-@interface TTTableViewItem : TTTableItem {
+@interface TTTableViewItem : TTTableLinkedItem {
+  TTStyledText* _text;
   NSString* _caption;
   UIView* _view;
 }
-
+@property(nonatomic,retain) TTStyledText* text;
 @property(nonatomic,copy) NSString* caption;
 @property(nonatomic,retain) UIView* view;
 

@@ -31,8 +31,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-static const CGFloat kHPadding = 10;
-static const CGFloat kVPadding = 10;
+static const CGFloat kHPadding = 5;
+static const CGFloat kVPadding = 5;
 static const CGFloat kMargin = 10;
 static const CGFloat kSmallMargin = 6;
 static const CGFloat kSpacing = 8;
@@ -41,7 +41,7 @@ static const CGFloat kDefaultTextViewLines = 5;
 static const CGFloat kMoreButtonMargin = 40;
 
 static const CGFloat kKeySpacing = 12;
-static const CGFloat kKeyWidth = 75;
+static const CGFloat kKeyWidth = 25;
 static const CGFloat kMaxLabelHeight = 2000;
 static const CGFloat kDisclosureIndicatorWidth = 23;
 

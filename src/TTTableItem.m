@@ -710,12 +710,12 @@
 
 @implementation TTTableViewItem
 
-@synthesize caption = _caption, view = _view;
+@synthesize caption = _caption, view = _view, text = _text;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // class public
 
-+ (id)itemWithCaption:(NSString*)caption view:(UIControl*)view {
++ (id)itemWithCaption:(NSString*)caption view:(UIView*)view {
   TTTableViewItem* item = [[[self alloc] init] autorelease];
   item.caption = caption;
   item.view = view;

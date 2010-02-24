@@ -14,6 +14,7 @@
 // limitations under the License.
 //
 
+#import "Three20/TTTableView.h"
 #import "Three20/TTTableViewCell.h"
 
 #import "Three20/TTGlobalUI.h"
@@ -32,6 +33,14 @@
 - (void)prepareForReuse {
   self.object = nil;
   [super prepareForReuse];
+}
+
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event {
+//	NSLog(@"touches ended!! %@, %@", touches, event);
+	/* XXXX this is the magic to get didSelectRowAtIndexPath: to get called.  is it the right place? */
+	TTTableView* tableView = (TTTableView*)[self ancestorOrSelfWithClass:[TTTableView class]];
+	NSIndexPath *indexPath = [tableView indexPathForRowAtPoint:[[touches anyObject] locationInView:tableView]];
+	[tableView touchRowAtIndexPath:indexPath animated:YES];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

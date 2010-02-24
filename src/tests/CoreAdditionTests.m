@@ -115,7 +115,7 @@
 
   // Unicode whitespace
   for (int unicode = 0x000A; unicode <= 0x000D; ++unicode) {
-    NSString* str = [NSString stringWithFormat:@"%C", unicode];
+	  NSString* str = [NSString stringWithFormat:@"%C", unicode];
     STAssertTrue(![str isEmptyOrWhitespace],
       @"Unicode string #%X should not be whitespace.", unicode);
   }

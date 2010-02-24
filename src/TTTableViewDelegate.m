@@ -98,12 +98,16 @@
  * it has one, we navigate to it. This also handles the logic for "Load more" buttons.
  */
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+
   id<TTTableViewDataSource> dataSource = (id<TTTableViewDataSource>)tableView.dataSource;
   id object = [dataSource tableView:tableView objectForRowAtIndexPath:indexPath];
+	NSLog(@"in TTTableViewDeletate didSelectRowAtIndexPath: selected %@ at %@", object, indexPath);
   if ([object isKindOfClass:[TTTableLinkedItem class]]) {
     TTTableLinkedItem* item = object;
     if (item.URL && [_controller shouldOpenURL:item.URL]) {
-      TTOpenURL(item.URL);
+      //TTOpenURL(item.URL);
+		[[TTNavigator navigator] openURL:item.URL query:[NSDictionary dictionaryWithObjectsAndKeys:item, @"item", nil] animated:YES];
+
     }
 
     if ([object isKindOfClass:[TTTableButton class]]) {

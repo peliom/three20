@@ -145,6 +145,7 @@ static const CGFloat kCancelHighlightThreshold = 4;
 
 - (void)selectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated
         scrollPosition:(UITableViewScrollPosition)scrollPosition {
+	NSLog(@"selectRowAtIndexPath %@, %@", indexPath, _highlightedLabel);
   if (!_highlightedLabel) {
     [super selectRowAtIndexPath:indexPath animated:animated scrollPosition:scrollPosition];
   }

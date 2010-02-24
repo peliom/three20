@@ -260,12 +260,19 @@ static const CGFloat kCancelHighlightThreshold = 4;
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event {
   TTTableView* tableView = (TTTableView*)[self ancestorOrSelfWithClass:[TTTableView class]];
+	/* XXX this was important to understand touch flow! NSLog(@"styled text label touches %@", tableView); */
+
   if (!tableView) {
     if (_highlightedNode) {
       [_highlightedNode performDefaultAction];    
       [self setHighlightedFrame:nil];
     }
   }
+  else if (!_highlightedNode) {
+	  /* XXXX this is the magic to get didSelectRowAtIndexPath: to get called.  is it the right place? */
+	  NSIndexPath *indexPath = [tableView indexPathForRowAtPoint:[[touches anyObject] locationInView:tableView]];
+	  [tableView touchRowAtIndexPath:indexPath animated:YES];	  
+  }	
 
   // We definitely don't want to call this if the label is inside a TTTableView, because
   // it winds up calling touchesEnded on the table twice, triggering the link twice

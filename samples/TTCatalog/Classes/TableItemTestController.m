@@ -45,6 +45,9 @@ static NSString* kLoremIpsum = @"Lorem ipsum dolor sit amet, consectetur adipisi
                             URL:@"tt://tableItemTest"],
       [TTTableMessageItem itemWithTitle:@"Bob Jones" caption:@"TTTableMessageItem"
                           text:kLoremIpsum timestamp:[NSDate date] URL:@"tt://tableItemTest"],
+	   [TTTableMessageItem itemWithTitle:@"Bob Jones" caption:@"TTTableMessageItem"
+									text:kLoremIpsum timestamp:[NSDate date] imageURL:@"http://www.wezaggle.com/js/favicon.ico" URL:@"tt://tableItemTest"],
+
       [TTTableMoreButton itemWithText:@"TTTableMoreButton"],
 
       @"Images",
@@ -56,7 +59,7 @@ static NSString* kLoremIpsum = @"Lorem ipsum dolor sit amet, consectetur adipisi
       [TTTableSubtitleItem itemWithText:@"TTTableSubtitleItem" subtitle:kLoremIpsum
                             imageURL:remoteImage defaultImage:defaultPerson
                             URL:@"tt://tableItemTest" accessoryURL:nil],
-      [TTTableMessageItem itemWithTitle:@"Bob Jones" caption:@"TTTableMessageItem"
+      [TTTableMessageItem itemWithTitle:@"Bob Jones really long title fasjlf goes one and aon" caption:@"TTTableMessageItem and there there was this other thing here"
                           text:kLoremIpsum timestamp:[NSDate date]
                           imageURL:remoteImage URL:@"tt://tableItemTest"],
 
